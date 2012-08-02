@@ -36,3 +36,11 @@ jstl:
 
 log4j:
 ├── log4j-1.2.17.jar
+
+depois de colocar webservices precisei deixar o heap com 256M
+
+depois de colocar o spring security precisei deixar o heap com 512M
+mais 3 jars para o spring-security funcionar
+mais umas 10 linhas de xml
+mais 4 classes
+mais um jsp
