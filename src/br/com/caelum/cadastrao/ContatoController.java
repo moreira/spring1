@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,33 +14,35 @@ import br.com.caelum.cadastrao.modelo.Contato;
 @Controller
 @Transactional
 public class ContatoController {
-	
+
 	@Autowired
 	private ContatoDAO dao;
-	
+
 	@RequestMapping("/contatos")
-	public String form(){
-		return "contatos";
+	public ModelAndView form() {
+		ModelAndView mav = initModelAndView();
+		return mav;
 	}
-	
+
 	@RequestMapping("/adicionar")
-	public ModelAndView adicionar(Contato contato){
+	public ModelAndView adicionar(Contato contato) {
 		dao.salva(contato);
-		ModelAndView mav = new ModelAndView("contatos");
-		List<Contato> lista = dao.lista();
-		mav.addObject("contatos", lista);
+		ModelAndView mav = initModelAndView();
 		return mav;
 	}
-	
+
 	@RequestMapping("/remover")
-	public ModelAndView remover(Contato contato){
+	public ModelAndView remover(Contato contato) {
 		dao.remove(contato);
+		ModelAndView mav = initModelAndView();
+		return mav;
+	}
+
+	private ModelAndView initModelAndView() {
 		ModelAndView mav = new ModelAndView("contatos");
 		List<Contato> lista = dao.lista();
 		mav.addObject("contatos", lista);
 		return mav;
 	}
-	
-	
-	
+
 }

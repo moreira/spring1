@@ -1,0 +1,5 @@
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+	version="2.0">
+	<endpoint name="ContatosWS" implementation="br.com.caelum.cadastrao.ws.ContatosWS"
+		url-pattern="/ContatosWS" />
+</endpoints>

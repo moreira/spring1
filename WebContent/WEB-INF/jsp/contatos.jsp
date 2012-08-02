@@ -10,10 +10,10 @@
 <body>
 	<h1>Cadastrão</h1>
 	<form action="adicionar.spring">
-		<label for="nome">Nome:</label>
-		<input name="nome" id="nome"/>
-		<label for="telefone">Telefone:</label>
-		<input name="telefone" id="telefone"/>
+		<label for="form:nome">Nome:</label>
+		<input name="nome" id="form:nome"/>
+		<label for="form:telefone">Telefone:</label>
+		<input name="telefone" id="form:telefone"/>
 		<input type="submit" value="Salvar"/>
 	</form>
 	
