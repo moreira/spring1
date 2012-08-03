@@ -44,3 +44,7 @@ mais 3 jars para o spring-security funcionar
 mais umas 10 linhas de xml
 mais 4 classes
 mais um jsp
+
+Rest:
+tive que adicionar @XmlRootElement na classe Contato e o jar jackson-all.1.9.8.jar
+fora configurar um controller	

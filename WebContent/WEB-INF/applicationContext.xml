@@ -1,10 +1,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
 	xmlns:sec="http://www.springframework.org/schema/security" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans     
         http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/oxm     
+        http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.1.xsd
         http://www.springframework.org/schema/mvc 
@@ -45,7 +49,8 @@
 	</sec:authentication-manager>
 
 	<sec:http auto-config="true">
-		<sec:intercept-url pattern="/contatos.spring" access="ROLE_USER" />
+		<sec:intercept-url pattern="/contatos.spring"
+			access="ROLE_USER" />
 
 		<sec:form-login login-page="/login-form.spring"
 			always-use-default-target="true" default-target-url="/contatos.spring"
